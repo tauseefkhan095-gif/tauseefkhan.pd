@@ -2,8 +2,7 @@ IMAGE NAMING — drop files into /images with these exact names (webp, png or jp
 Case images: one device framing per case; capture screens in the product's own theme; export ≤1600px wide, WebP preferred.
 Phone mocks (work list): portrait 9:19.5, ≥750px wide.  Project cards: 16:10, ≥1200px wide.
 Testimonials + pull quotes: edit SITE.quotes at the top of the script in index.html. Set SITE.hideEmpty=true to hide anything still unfilled.
-While placing images you can set SITE.findImages=true to have the site look for every slot itself (webp → png → jpg); switch it off for launch.
-A file with a different name or location can be mapped to a slot in SITE.assets (same place).
+While placing images you can set SITE.findImages=true to have the site look for every slot itself; switch it off for launch.
 
 == SAGAN ==   mock-sagan   (phone mock in the work list)
   sagan-01  —  Hero — open on the conversation itself: the moderator-speaking state with a caption visible. Not a device grid — the interview is the product.
@@ -63,18 +62,20 @@ A file with a different name or location can be mapped to a slot in SITE.assets 
   curie-05  —  The surfaces — podcasts rows (Featured / Conferences / By Curie / Case Studies), games, newsletter.
   curie-06  —  Closing contextual shot: Curie on a phone in a real gap — corridor, coffee, between patients.
 
-== SITE ==   mock-site   (phone mock in the work list)
+== MORE PROJECTS ==
+Six cards already have pictures (files in images/projects/, or loaded from the old portfolio for Voohoo Live and Fundoo-Learning).
+For any other card: save the picture as <slot>.webp in /images and list it in SITE.images.
+Extra pictures inside a project pop-up: <slot>-1.webp, <slot>-2.webp … also listed in SITE.images.
 
-== PROJECT CARDS (16:10) ==
   proj-zena-chatbot         —  Zena
-  proj-asapp                —  ASAPP
-  proj-click-it-holcim      —  Holcim Click-it
-  proj-world-class-health   —  World Class Health
+  proj-asapp                —  ASAPP   (has pictures)
+  proj-click-it-holcim      —  Holcim Click-it   (has pictures)
+  proj-world-class-health   —  World Class Health   (has pictures)
   proj-alpha-match          —  Alpha Match
-  proj-voohoo-live          —  Voohoo Live
-  proj-maxsold              —  MaxSold
+  proj-voohoo-live          —  Voohoo Live   (has pictures)
+  proj-maxsold              —  MaxSold   (has pictures)
   proj-centricity-research  —  Centricity Research
   proj-safura-ai            —  Safura AI
-  proj-fundoo-learning      —  Fundoo-Learning
+  proj-fundoo-learning      —  Fundoo-Learning   (has pictures)
   proj-ferma-congress       —  Ferma Congress
   proj-media-tracking       —  Media Tracking

@@ -1,45 +1,58 @@
-# Deploying the portfolio
+# Tauseef Khan — portfolio
 
-What's in this folder is the complete site. Nothing else is needed.
+Everything in this folder is the site. There is no build step: what you push is what gets served.
 
-    index.html                              the whole site in English (all case studies, styles, scripts)
-    ar/index.html                           the same site in Arabic (right-to-left), served at /ar/
-    fonts/                                  the Arabic typefaces the Arabic page uses
-    Tauseef_Khan_Product_Designer_CV.pdf    the CV every "Download CV" / "CV ↓" control points to
-    og.png                                  link-preview image (Slack, LinkedIn, iMessage, X)
+    index.html                              the whole site: home, six case studies, project pop-ups, styles, scripts
+    Tauseef_Khan_Product_Designer_CV.pdf    the CV every "Download CV" / "CV" button points to
+    og.png                                  link-preview image (LinkedIn, Slack, iMessage, X)
     favicon.svg                             tab icon
-    images/                                 drop your screenshots here — see images/NAMES.txt for the exact file names
-    netlify.toml                            caching + security headers (Netlify reads it automatically; harmless elsewhere)
+    images/projects/                        pictures for the More projects cards and pop-ups
+    images/NAMES.txt                        file names for the case-study image slots
     robots.txt                              lets search engines index the site
+    netlify.toml                            caching + security headers (Netlify reads it; harmless elsewhere)
+    .nojekyll                               tells GitHub Pages to serve the folder as it is
 
-Keep these files together: index.html links to the CV, the icon and the images by name.
+**Removed in this version.** Delete these from the repository if they are still there: the `ar/` folder and the `fonts/` folder. The site is English only now.
 
-## 1. Put it online (Netlify, free)
-1. Go to app.netlify.com → "Add new site" → "Deploy manually".
-2. Drag this whole folder (or the zip) onto the drop zone. The site is live on a netlify.app address in ~20 seconds.
-3. Every later update: same drag-and-drop onto the site's "Deploys" tab.
+## 1. Publishing
+Commit and push. If the repository is connected to Netlify or GitHub Pages, the push publishes the site.
+(Without a connected repository: app.netlify.com → Add new site → Deploy manually → drop this folder.)
 
-## 2. Your own domain
-Buy the domain (Namecheap / GoDaddy / Google Domains), then in Netlify: Domain management → Add custom domain → follow the DNS steps shown. HTTPS is automatic.
+## 2. SEO: what is done, and what needs the site address
+Done in index.html: page title and description, one main heading, heading order, link-preview tags, structured data (who you are, your role, your profiles), image alt text, and a robots rule that allows indexing.
 
-## 3. One edit after you know the domain
-In index.html, change both `content="og.png"` values (og:image and twitter:image) to the full address, e.g. `https://tauseefkhan.design/og.png`. Link previews only work with a full URL. Do the same in ar/index.html (there the value is `../og.png`).
+Search engines and link previews need full addresses, so three things wait for your domain:
 
-In both files, also make the three `hreflang` links near the top absolute: `https://yourdomain/` for English and x-default, `https://yourdomain/ar/` for Arabic. They tell search engines the two pages are the same site in two languages.
+1. In index.html, replace the comment that starts `<!-- Needs the site address` with
+   `<link rel="canonical" href="https://YOUR-DOMAIN/">`
+2. In index.html, change both `content="og.png"` values (og:image and twitter:image) to `https://YOUR-DOMAIN/og.png`.
+3. Add a `sitemap.xml` listing `https://YOUR-DOMAIN/`, and add the line `Sitemap: https://YOUR-DOMAIN/sitemap.xml` to robots.txt.
 
-## 4. Filling the site
-- Images: name files exactly as in images/NAMES.txt (webp, png or jpg), drop them into images/, and add each file name to `SITE.images` near the top of the script in index.html, e.g. `images:['sagan-01.webp','mock-gribb.png']`. Captions appear under them automatically.
-- While you're still placing images, `SITE.findImages:true` makes the site look for every slot by itself, no list needed. Turn it back off for launch: with it on, every empty slot costs visitors a few failed requests.
-- Testimonials and in-case pull quotes: edit `SITE.quotes` near the top of the script in index.html.
-- `SITE.hideEmpty` (same place): `true` hides anything still unfilled (set for launch). Set `false` while you're placing images, so you can see every slot.
-- Light or dark on first visit: `DEFAULT_THEME` in the first `<script>` at the top of index.html (`'light'` or `'dark'`). Visitors who switch keep their own choice.
-- New CV: replace the PDF and keep the same file name.
+Or tell Claude the address and ask for the project again: it rebuilds with all three in place.
 
-## 5. Two languages
-- English is at `/`, Arabic at `/ar/`. The switch sits in the top bar (العربية / English) and in the bar of every case study, and it opens the same view in the other language.
-- The two pages are separate files. A text change in index.html needs the matching change in ar/index.html; so do the settings in step 4 (`SITE.images`, `SITE.quotes`, `DEFAULT_THEME`). Image files are shared: both pages read the same images/ folder.
-- The CV is English only, and the Arabic page says so next to the download.
-- The Arabic was translated by Claude and has not been reviewed by a native speaker. Have one read it before you publish, starting with the home page and your name (توصيف خان).
+After the site is live, add it in Google Search Console and submit the address (or the sitemap).
 
-## 6. Editing text
-The text lives in index.html. The case studies started in Notion, but this build also carries the résumé-synced edits made directly in the page, so the Notion pages are no longer an exact copy. Edit index.html, or bring Notion up to date first if you want to go back to converting from it.
+## 3. The note form
+"Send" posts the name and purpose to FormSubmit, which forwards them to tauseefkhan095@gmail.com. The first note sent from the live site triggers an activation email from FormSubmit: click the link in it once (check spam). Until then, and whenever the service cannot be reached, the visitor's email app opens with the note filled in instead.
+To change where notes go, edit `formEndpoint` in the SITE settings (step 4).
+
+## 4. Settings
+Near the top of the script in index.html there is a block called `SITE`:
+- `images`: file names you have added to images/ (see images/NAMES.txt).
+- `findImages`: `true` makes the site look for every image slot by itself while you are placing pictures. Switch it off for launch.
+- `hideEmpty`: `true` hides image slots and quote slots that are still empty.
+- `quotes`: testimonials and pull quotes.
+- `formEndpoint`: where the note form is delivered.
+
+Light or dark on first visit: `DEFAULT_THEME` in the first `<script>` at the top of index.html. Visitors who switch keep their own choice.
+
+## 5. Pictures
+- More projects: ASAPP, Holcim Click-it, World Class Health and MaxSold use the files in images/projects/. Voohoo Live and Fundoo-Learning still load their pictures from the old Framer portfolio (search index.html for `framerusercontent.com`). To make them independent of that site, save those pictures into images/projects/ and change the addresses.
+- Case studies: name files as in images/NAMES.txt, put them in images/, and list them in `SITE.images`.
+
+## 6. Certificates
+The education cards are ready for certificate links. To add one, put this line inside the card, after its last line of text:
+`<a class="cert" href="CERTIFICATE-ADDRESS" target="_blank" rel="noopener noreferrer">View certificate <span aria-hidden="true">↗</span></a>`
+
+## 7. Editing text
+All text lives in index.html. A new CV replaces the PDF under the same file name.
