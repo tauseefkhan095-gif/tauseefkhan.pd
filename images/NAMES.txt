@@ -67,21 +67,25 @@ Cards marked below already have pictures: files in images/projects/, or loaded f
 For any other card: save the picture as <slot>.webp in /images and list it in SITE.images.
 Extra pictures inside a project pop-up: <slot>-1.webp, <slot>-2.webp … also listed in SITE.images.
 
-  proj-zena-chatbot         —  Zena
-  proj-asapp                —  ASAPP   (has pictures)
-  proj-click-it-holcim      —  Holcim Click-it   (has pictures)
+  proj-click-it-holcim      —  Click it by Holcim   (has pictures)
+  proj-clear-bio            —  Clear.bio   (has pictures)
+  proj-efl                  —  EFL Clik   (has pictures)
   proj-world-class-health   —  World Class Health   (has pictures)
-  proj-alpha-match          —  Alpha Match
-  proj-voohoo-live          —  Voohoo Live   (has pictures)
-  proj-maxsold              —  MaxSold   (has pictures)
-  proj-centricity-research  —  Centricity Research
-  proj-safura-ai            —  Safura AI
-  proj-fundoo-learning      —  Fundoo-Learning   (has pictures)
-  proj-ferma-congress       —  Ferma Congress
-  proj-media-tracking       —  Media Tracking
   proj-amazemobility        —  Amaze Mobility   (has pictures)
-  proj-efl                  —  EFL Finance   (has pictures)
+  proj-alpha-match          —  Alpha Match
   proj-raftaarr             —  Raftaarr   (has pictures)
+  proj-eatchme              —  EatchMe
+  proj-maxsold              —  MaxSold   (has pictures)
+  proj-voohoo-live          —  Voohoo Live   (has pictures)
+  proj-asapp                —  ASAPP   (has pictures)
+  proj-safura-ai            —  Safura AI
+  proj-centricity-research  —  Centricity Research
+  proj-citypark             —  CityPark   (has pictures)
+  proj-media-tracking       —  Media Tracking
+  proj-ferma-congress       —  Ferma Congress
+  proj-grinhits             —  GrinHits   (has pictures)
+  proj-zena-chatbot         —  Zena
+  proj-fundoo-learning      —  Fundoo-Learning   (has pictures)
   proj-thatsgame            —  ThatsGame   (has pictures)
   proj-taxvolt              —  TaxVolt   (has pictures)
   proj-gocarshare           —  GoCar Share   (has pictures)
@@ -90,7 +94,6 @@ Extra pictures inside a project pop-up: <slot>-1.webp, <slot>-2.webp … also li
   proj-viewgem              —  ViewGem   (has pictures)
   proj-appinfinity          —  AppInfinity Solutions   (has pictures)
   proj-jobbers              —  Jobbers   (has pictures)
-  proj-grinhits             —  GrinHits   (has pictures)
-  proj-citypark             —  CityPark   (has pictures)
   proj-astrobaba            —  AstroBaba   (has pictures)
   proj-yaye                 —  Yaye   (has pictures)
+  proj-xtracap              —  Xtracap

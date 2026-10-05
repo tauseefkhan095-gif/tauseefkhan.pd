@@ -45,17 +45,18 @@ Near the top of the script in index.html there is a block called `SITE`:
 Light or dark on first visit: `DEFAULT_THEME` in the first `<script>` at the top of index.html. Visitors who switch keep their own choice.
 
 ## 5. Pictures
-- More projects: ASAPP, Holcim Click-it, World Class Health and MaxSold use the files in images/projects/.
-- The other project pictures (Voohoo Live, Fundoo-Learning and the fifteen projects added from the old portfolio) still load from the old Framer portfolio's image server. They show as long as that server keeps them. To make the site independent of it, run this once in this folder, then commit the result:
+- Stored in this folder (images/projects/): the Panelist Survey App cover, and the pictures for Clear.bio, EFL Clik, ASAPP, World Class Health and MaxSold.
+- Loaded from other servers: sixteen projects take their pictures from the old Framer portfolio, and Click it by Holcim takes its cover and screen pictures from clickitapp.io. They show as long as those servers keep them. To make the site independent of them, run this once in this folder, then commit the result:
 
       python3 download-images.py
 
   It saves every such picture into images/projects/ and updates index.html to use the local copies.
-- Case studies: name files as in images/NAMES.txt, put them in images/, and list them in `SITE.images`.
+- Case studies: every case study has marked places for pictures. They stay hidden on the live site until a picture is added. Name files as in images/NAMES.txt, put them in images/, and list them in `SITE.images`.
 
 ## 6. Certificates
-The education cards are ready for certificate links. To add one, put this line inside the card, after its last line of text:
-`<a class="cert" href="CERTIFICATE-ADDRESS" target="_blank" rel="noopener noreferrer">View certificate <span aria-hidden="true">↗</span></a>`
+The Google UX and Interaction Design Foundation cards link to their certificates and show how many certifications each issuer has awarded you (8 and 14). To change an address or a total, search index.html for `cert-row`.
+To give another education card a link, put this inside the card, after its last line of text:
+`<div class="cert-row"><a class="cert" href="CERTIFICATE-ADDRESS" target="_blank" rel="noopener noreferrer">View certificate <span aria-hidden="true">↗</span></a></div>`
 
 ## 7. Editing text
 All text lives in index.html. A new CV replaces the PDF under the same file name.
