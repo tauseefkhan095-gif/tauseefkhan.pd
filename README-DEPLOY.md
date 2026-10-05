@@ -11,6 +11,8 @@ Everything in this folder is the site. There is no build step: what you push is 
     robots.txt                              lets search engines index the site
     netlify.toml                            caching + security headers (Netlify reads it; harmless elsewhere)
     .nojekyll                               tells GitHub Pages to serve the folder as it is
+    download-images.py                      optional helper, see step 5
+    sitemap.xml                             the page list for search engines
 
 **Removed in this version.** Delete these from the repository if they are still there: the `ar/` folder and the `fonts/` folder. The site is English only now.
 
@@ -21,14 +23,10 @@ Commit and push. If the repository is connected to Netlify or GitHub Pages, the 
 ## 2. SEO: what is done, and what needs the site address
 Done in index.html: page title and description, one main heading, heading order, link-preview tags, structured data (who you are, your role, your profiles), image alt text, and a robots rule that allows indexing.
 
-Search engines and link previews need full addresses, so three things wait for your domain:
+The site address is already in place: canonical link, link-preview addresses, sitemap.xml and the Sitemap line in robots.txt all use
+https://tauseefkhan095-gif.github.io/tauseefkhan.pd. If the address changes, replace it in index.html, sitemap.xml and robots.txt.
 
-1. In index.html, replace the comment that starts `<!-- Needs the site address` with
-   `<link rel="canonical" href="https://YOUR-DOMAIN/">`
-2. In index.html, change both `content="og.png"` values (og:image and twitter:image) to `https://YOUR-DOMAIN/og.png`.
-3. Add a `sitemap.xml` listing `https://YOUR-DOMAIN/`, and add the line `Sitemap: https://YOUR-DOMAIN/sitemap.xml` to robots.txt.
-
-Or tell Claude the address and ask for the project again: it rebuilds with all three in place.
+One GitHub Pages detail: when the site lives in a sub-folder of github.io, search engines do not read this robots.txt (they only look at the root of the host). Nothing is blocked either way; submit sitemap.xml in Search Console so it is found.
 
 After the site is live, add it in Google Search Console and submit the address (or the sitemap).
 
@@ -47,7 +45,12 @@ Near the top of the script in index.html there is a block called `SITE`:
 Light or dark on first visit: `DEFAULT_THEME` in the first `<script>` at the top of index.html. Visitors who switch keep their own choice.
 
 ## 5. Pictures
-- More projects: ASAPP, Holcim Click-it, World Class Health and MaxSold use the files in images/projects/. Voohoo Live and Fundoo-Learning still load their pictures from the old Framer portfolio (search index.html for `framerusercontent.com`). To make them independent of that site, save those pictures into images/projects/ and change the addresses.
+- More projects: ASAPP, Holcim Click-it, World Class Health and MaxSold use the files in images/projects/.
+- The other project pictures (Voohoo Live, Fundoo-Learning and the fifteen projects added from the old portfolio) still load from the old Framer portfolio's image server. They show as long as that server keeps them. To make the site independent of it, run this once in this folder, then commit the result:
+
+      python3 download-images.py
+
+  It saves every such picture into images/projects/ and updates index.html to use the local copies.
 - Case studies: name files as in images/NAMES.txt, put them in images/, and list them in `SITE.images`.
 
 ## 6. Certificates

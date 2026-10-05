@@ -63,7 +63,7 @@ While placing images you can set SITE.findImages=true to have the site look for 
   curie-06  —  Closing contextual shot: Curie on a phone in a real gap — corridor, coffee, between patients.
 
 == MORE PROJECTS ==
-Six cards already have pictures (files in images/projects/, or loaded from the old portfolio for Voohoo Live and Fundoo-Learning).
+Cards marked below already have pictures: files in images/projects/, or loaded from the old portfolio (see README, step 5).
 For any other card: save the picture as <slot>.webp in /images and list it in SITE.images.
 Extra pictures inside a project pop-up: <slot>-1.webp, <slot>-2.webp … also listed in SITE.images.
 
@@ -79,3 +79,18 @@ Extra pictures inside a project pop-up: <slot>-1.webp, <slot>-2.webp … also li
   proj-fundoo-learning      —  Fundoo-Learning   (has pictures)
   proj-ferma-congress       —  Ferma Congress
   proj-media-tracking       —  Media Tracking
+  proj-amazemobility        —  Amaze Mobility   (has pictures)
+  proj-efl                  —  EFL Finance   (has pictures)
+  proj-raftaarr             —  Raftaarr   (has pictures)
+  proj-thatsgame            —  ThatsGame   (has pictures)
+  proj-taxvolt              —  TaxVolt   (has pictures)
+  proj-gocarshare           —  GoCar Share   (has pictures)
+  proj-myparkings           —  MyParkings   (has pictures)
+  proj-koshcrypto           —  Kosh Crypto   (has pictures)
+  proj-viewgem              —  ViewGem   (has pictures)
+  proj-appinfinity          —  AppInfinity Solutions   (has pictures)
+  proj-jobbers              —  Jobbers   (has pictures)
+  proj-grinhits             —  GrinHits   (has pictures)
+  proj-citypark             —  CityPark   (has pictures)
+  proj-astrobaba            —  AstroBaba   (has pictures)
+  proj-yaye                 —  Yaye   (has pictures)
