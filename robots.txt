@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://tauseefkhan095-gif.github.io/tauseefkhan.pd/sitemap.xml
