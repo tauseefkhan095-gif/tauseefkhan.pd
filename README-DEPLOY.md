@@ -14,7 +14,7 @@ Everything in this folder is the site. There is no build step: what you push is 
     download-images.py                      optional helper, see step 5
     sitemap.xml                             the page list for search engines
 
-**New in this version.** Every case study now carries its research layer: a research-and-evidence strip, a "how we knew" line under each insight, the jobs the product had to do, journey maps, information architecture, roles and signal clusters where they apply, and a metrics or "what I can point to" strip. All 45 diagrams are drawn inline in index.html (no image files needed). Image slots still waiting for pictures stay hidden until a file named as in images/NAMES.txt is added. The Survey case study is renamed "Panelist Market Research Survey Platform" throughout.
+**New in this version.** Every case study now carries its research layer: a research-and-evidence strip, a "how we knew" line under each insight, the jobs the product had to do, journey maps, information architecture, roles and signal clusters where they apply, and a metrics or "what I can point to" strip. All 45 diagrams are drawn inline in index.html (no image files needed). Image slots still waiting for pictures stay hidden until a file named as in images/NAMES.txt is added. The Survey case study is renamed "Panelist Market Research Survey Platform" throughout. This build also fixes two duplicated lines in the previous zip (the Ferma "Team" fact repeated five times; one BPG paragraph repeated twice) — replace index.html with this one.
 
 **Removed in this version.** Delete these from the repository if they are still there: the `ar/` folder and the `fonts/` folder. The site is English only now.
 
